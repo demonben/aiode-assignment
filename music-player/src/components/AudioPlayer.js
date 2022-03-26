@@ -1,7 +1,19 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 const AudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("keydown", (e) => {
+      if (e.key.toLocaleLowerCase() === "l") {
+        togglePlaySpeedUp();
+      } else if (e.key.toLocaleLowerCase() === "j") {
+        // togglePlaySpeedDown();
+      } else if (e.key.toLocaleLowerCase() === "k") {
+        console.log("k is pressed");
+      }
+    });
+  }, []);
 
   const audioPlayer = useRef();
 
@@ -13,9 +25,7 @@ const AudioPlayer = () => {
       audioPlayer.current.pause();
     }
   };
-  const togglePlaySpeedDown = () => {
-    audioPlayer.current.playbackRate = "-1"
-  };
+
   const togglePlaySpeedUp = () => {
     console.log(audioPlayer.current.playbackRate);
     if (audioPlayer.current.playbackRate === 1) {
@@ -41,7 +51,9 @@ const AudioPlayer = () => {
       </audio>
 
       <div>
-        <button onClick={togglePlaySpeedDown} className="button-rhythm">J</button>
+        <button onClick={togglePlaySpeedDown} className="button-rhythm">
+          J
+        </button>
         <button onClick={togglePlayPause} className="button-rhythm">
           K
         </button>
