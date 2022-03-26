@@ -8,7 +8,7 @@ const AudioPlayer = () => {
       if (e.key.toLocaleLowerCase() === "l") {
         togglePlaySpeedUp();
       } else if (e.key.toLocaleLowerCase() === "j") {
-        // togglePlaySpeedDown();
+        togglePlaySpeedDown();
       } else if (e.key.toLocaleLowerCase() === "k") {
         console.log("k is pressed");
       }
@@ -25,7 +25,10 @@ const AudioPlayer = () => {
       audioPlayer.current.pause();
     }
   };
-
+  const togglePlaySpeedDown = () => {
+    console.log("pressed ");
+    audioPlayer.current.playbackRate = "-1";
+  };
   const togglePlaySpeedUp = () => {
     console.log(audioPlayer.current.playbackRate);
     if (audioPlayer.current.playbackRate === 1) {
