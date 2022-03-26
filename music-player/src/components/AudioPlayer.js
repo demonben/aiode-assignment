@@ -26,19 +26,15 @@ const AudioPlayer = () => {
     }
   };
   const togglePlaySpeedDown = () => {
-    console.log("pressed ");
-    audioPlayer.current.playbackRate = "-1";
+    if (audioPlayer.current.playbackRate !== -5) {
+      audioPlayer.current.playbackRate = audioPlayer.current.playbackRate - 1;
+      console.log(audioPlayer.current.playbackRate);
+    }
   };
   const togglePlaySpeedUp = () => {
-    console.log(audioPlayer.current.playbackRate);
-    if (audioPlayer.current.playbackRate === 1) {
-      audioPlayer.current.playbackRate = 2;
-    } else if (audioPlayer.current.playbackRate === 2) {
-      audioPlayer.current.playbackRate = 3;
-    } else if (audioPlayer.current.playbackRate === 3) {
-      audioPlayer.current.playbackRate = 4;
-    } else if (audioPlayer.current.playbackRate === 4) {
-      audioPlayer.current.playbackRate = 5;
+    if (audioPlayer.current.playbackRate !== 5) {
+      audioPlayer.current.playbackRate = audioPlayer.current.playbackRate + 1;
+      console.log(audioPlayer.current.playbackRate);
     }
   };
 
