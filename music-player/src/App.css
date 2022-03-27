@@ -2,12 +2,25 @@
   padding-left: 100px;
   padding-top: 100px;
 }
+.audio-player{
+  width :215px;
+}
+.button-wraper{
+  background-color: #212129;
+  width :215px;
+  height: 105px;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  align-items: center;
+}
+
 .button-rhythm {
   font-weight: bold;
   font-size: medium;
   color: white;
   background-color: #000000;
-  margin: 5px;
+  margin: 10px;
   width: 35px;
   height: 35px;
   border-radius: 10px;

@@ -43,8 +43,7 @@ const AudioPlayer = () => {
 
   return (
     <div>
-      <p>Audio Player</p>
-      <audio ref={audioPlayer} controls>
+      <audio className="audio-player" ref={audioPlayer} controls>
         <source
           src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav"
           type="audio/wav"
@@ -52,7 +51,7 @@ const AudioPlayer = () => {
         Your browser does not support the audio element.
       </audio>
 
-      <div>
+      <div className="button-wraper">
         <button onClick={togglePlaySpeedDown} className="button-rhythm">
           J
         </button>
