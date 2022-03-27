@@ -1,7 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 const AudioPlayer = () => {
+  const [isPressed, setIsPressed] = useState(true);
   const audioPlayer = useRef();
+  const kButton = useRef();
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
@@ -15,7 +17,7 @@ const AudioPlayer = () => {
     } else if (e.key.toLocaleLowerCase() === "j") {
       togglePlaySpeedDown();
     } else if (e.key.toLocaleLowerCase() === "k") {
-      togglePlayPause();
+      kButton.current.click();
     } else if (e.key.toLocaleLowerCase() === "escape") {
       window.location.reload(false);
     }
@@ -24,8 +26,8 @@ const AudioPlayer = () => {
   const togglePlayPause = () => {
     if (audioPlayer.current.playbackRate === 1) {
       audioPlayer.current.playbackRate = 0;
-    }else{
-      audioPlayer.current.playbackRate = 1
+    } else {
+      audioPlayer.current.playbackRate = 1;
     }
   };
   const togglePlaySpeedDown = () => {
@@ -40,6 +42,10 @@ const AudioPlayer = () => {
       console.log(audioPlayer.current.playbackRate);
     }
   };
+  function gFunction() {
+    let gIsPressed = isPressed;
+    setIsPressed(!gIsPressed);
+  }
 
   return (
     <div>
@@ -55,7 +61,14 @@ const AudioPlayer = () => {
         <button onClick={togglePlaySpeedDown} className="button-rhythm">
           J
         </button>
-        <button onClick={togglePlayPause} className="button-rhythm">
+        <button
+          ref={kButton}
+          onClick={() => {
+            togglePlayPause();
+            gFunction();
+          }}
+          className={isPressed ? "button-rhythm" : "active"}
+        >
           K
         </button>
         <button onClick={togglePlaySpeedUp} className="button-rhythm">

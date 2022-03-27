@@ -16,6 +16,7 @@
 }
 
 .button-rhythm {
+  border: none;
   font-weight: bold;
   font-size: medium;
   color: white;
@@ -30,5 +31,16 @@
 }
 .button-rhythm:active {
   background-color: #3A1DB8;
+}
+.active{
+  border: none;
+  font-weight: bold;
+  font-size: medium;
+  color: white;
+  background-color: #5016EF;
+  margin: 10px;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
 }
 
