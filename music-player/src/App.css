@@ -1,7 +1,21 @@
-.App{
+.App {
   padding-left: 100px;
   padding-top: 100px;
 }
-.button-rhythm{
+.button-rhythm {
+  font-weight: bold;
+  font-size: medium;
+  color: white;
+  background-color: #000000;
   margin: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
 }
+.button-rhythm:hover {
+  background-color: #5f33ff;
+}
+.button-rhythm:active {
+  background-color: #3A1DB8;
+}
+
