@@ -1,28 +1,31 @@
 import React, { useRef, useState, useEffect } from "react";
 
 const AudioPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const audioPlayer = useRef();
 
   useEffect(() => {
-    window.addEventListener("keydown", (e) => {
-      if (e.key.toLocaleLowerCase() === "l") {
-        togglePlaySpeedUp();
-      } else if (e.key.toLocaleLowerCase() === "j") {
-        togglePlaySpeedDown();
-      } else if (e.key.toLocaleLowerCase() === "k") {
-        console.log("k is pressed");
-      }
+    document.addEventListener("keydown", (e) => {
+      shortcutHandler(e);
     });
   }, []);
 
-  const audioPlayer = useRef();
+  const shortcutHandler = (e) => {
+    if (e.key.toLocaleLowerCase() === "l") {
+      togglePlaySpeedUp();
+    } else if (e.key.toLocaleLowerCase() === "j") {
+      togglePlaySpeedDown();
+    } else if (e.key.toLocaleLowerCase() === "k") {
+      togglePlayPause();
+    } else if (e.key.toLocaleLowerCase() === "escape") {
+      window.location.reload(false);
+    }
+  };
 
   const togglePlayPause = () => {
-    setIsPlaying(!isPlaying);
-    if (isPlaying) {
-      audioPlayer.current.play();
-    } else {
-      audioPlayer.current.pause();
+    if (audioPlayer.current.playbackRate === 1) {
+      audioPlayer.current.playbackRate = 0;
+    }else{
+      audioPlayer.current.playbackRate = 1
     }
   };
   const togglePlaySpeedDown = () => {
