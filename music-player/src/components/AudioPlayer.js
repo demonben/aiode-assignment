@@ -48,7 +48,7 @@ const AudioPlayer = () => {
   }
 
   return (
-    <div>
+    <div >
       <audio className="audio-player" ref={audioPlayer} controls>
         <source
           src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav"
