@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/aiode-assignment/static/css/main.2bb3cf18.css",
+    "main.js": "/aiode-assignment/static/js/main.e8f9af17.js",
+    "index.html": "/aiode-assignment/index.html",
+    "main.2bb3cf18.css.map": "/aiode-assignment/static/css/main.2bb3cf18.css.map",
+    "main.e8f9af17.js.map": "/aiode-assignment/static/js/main.e8f9af17.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2bb3cf18.css",
+    "static/js/main.e8f9af17.js"
+  ]
+}
