@@ -26,6 +26,8 @@ margin-top: 100px;
   width: 35px;
   height: 35px;
   border-radius: 10px;
+  align-items: center;
+  text-align: center;
 }
 .button-rhythm:hover {
   background-color: #5f33ff;
@@ -43,5 +45,6 @@ margin-top: 100px;
   width: 35px;
   height: 35px;
   border-radius: 10px;
+  text-align: center;
 }
 
